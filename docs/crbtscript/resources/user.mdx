@@ -1,0 +1,63 @@
+---
+title: <user>
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
+import {
+  DiscordMessages,
+  DiscordMessage,
+} from '@skyra/discord-components-react';
+import DiscordComponents, {
+  DiscordMention,
+} from '@site/src/components/DiscordMention';
+import { profiles } from '@site/src/components/profiles';
+
+Allows you to get any of a user’s Discord account information.
+
+## Context
+
+| Event            | Context                                                                   |
+| ---------------- | ------------------------------------------------------------------------- |
+| Welcome message  | `user` is assigned to the user who joined the server.                     |
+| Farewell message | `user` is assigned to the user who left the server.                       |
+| Custom command   | `user` is assigned to the user who triggered the command. (not available) |
+
+## Syntax
+
+<Tabs groupId='io'>
+  <TabItem value='input' label='Input'>
+    <CodeBlock>
+      &lt;user.mention&gt; left the server... They were a member since
+      &lt;user.joined&gt;.
+    </CodeBlock>
+  </TabItem>
+  <TabItem value='output' label='Output'>
+    <DiscordMessages>
+      <DiscordMessage {...profiles.crbt}>
+        <DiscordMention>Clembs</DiscordMention> left the server. They were a
+        member since <b>2021-05-06T09:10:00.000Z</b>.
+      </DiscordMessage>
+    </DiscordMessages>
+  </TabItem>
+</Tabs>
+
+## Properties
+
+| Property   | Description                                                             | Example                                                                                                          |
+| ---------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `name`     | Get the username                                                        | Clembs                                                                                                           |
+| `discrim`  | Get the four-digit discriminator                                        | 3548                                                                                                             |
+| `tag`      | Get the Discord tag                                                     | Clembs#3548                                                                                                      |
+| `id`       | Get the Discord user ID                                                 | 327690719085068289                                                                                               |
+| `avatar`   | Get a link to the user’s avatar                                         | [Discord avatar URL](https://cdn.discordapp.com/avatars/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
+| `banner`   | Get a link to the user’s banner, or “null” if the user doesn’t have any | [Discord banner URL](https://cdn.discordapp.com/banners/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
+| `nickname` | Get the user’s server nickname, or its username if none was set         | Clembs                                                                                                           |
+| `created`  | Get the date when the user created their account                        | 2017-06-23T08:05:00Z                                                                                             |
+| `joined`   | Get the date when the user joined the current server                    | 2021-05-06T09:10:00Z                                                                                             |
+| `mention`  | Mention the user using their ID                                         | <DiscordMention>Clembs</DiscordMention>                                                                          |
+| `isBot`    | Returns `true` if the user is a bot, and `false` otherwise              | `false`                                                                                                          |
+| `roles`    | Get the names of the user’s roles                                       | Developer, Designer, Streamer                                                                                    |

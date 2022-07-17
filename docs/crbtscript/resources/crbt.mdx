@@ -1,0 +1,49 @@
+---
+title: <crbt>
+sidebar_position: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+} from '@skyra/discord-components-react';
+import DiscordComponents, {
+  DiscordMention,
+} from '@site/src/components/DiscordMention';
+import { profiles } from '@site/src/components/profiles';
+
+Allows you to get any of the information on the CRBT user.
+
+## Context
+
+The `<crbt>` tag is globally available and does not require a context.
+
+## Syntax
+
+<Tabs groupId='io'>
+  <TabItem value='input' label='Input'>
+    <CodeBlock>&lt;crbt.mention&gt; is the best bot!!!</CodeBlock>
+  </TabItem>
+  <TabItem value='output' label='Output'>
+    <DiscordMessages>
+      <DiscordMessage {...profiles.crbt}>
+        <DiscordCommand slot='reply' {...profiles.clembs} command='/the-truth'></DiscordCommand>
+        <DiscordMention>CRBT</DiscordMention> is the best bot!!!
+      </DiscordMessage>
+    </DiscordMessages>
+  </TabItem>
+</Tabs>
+
+## Properties
+
+CRBT inherits most properties from [`<user>`](./user), the list below only shows the main differences and overwrites.
+
+| Property | Description                                 | Example |
+| -------- | ------------------------------------------- | ------- |
+| `banner` | Does not exist, as bots cannot set a banner |         |
+| `isBot`  | Always returns `true`                       | `true`  |

@@ -1,0 +1,39 @@
+.mention {
+  color: #505cdc;
+  background-color: hsla(235, 85.6%, 64.7%, 0.3);
+  font-weight: 500;
+  padding: 0 2px;
+  border-radius: 3px;
+  unicode-bidi: -moz-plaintext;
+  unicode-bidi: plaintext;
+  -webkit-transition: background-color 50ms ease-out, color 50ms ease-out;
+  transition: background-color 50ms ease-out, color 50ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(235, 85.6%, 64.7%);
+    text-decoration: underline;
+  }
+
+  &.user:before {
+    content: '@';
+  }
+
+  &.channel:before {
+    content: '#';
+  }
+
+  &.role:before {
+    content: '@';
+  }
+}
+
+[data-theme='light'] .mention {
+  &:hover {
+    color: #fff;
+  }
+}
+
+[data-theme='dark'] .mention {
+  color: #fff;
+}

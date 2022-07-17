@@ -1,0 +1,41 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
+import {
+  DiscordMessages,
+  DiscordMessage,
+} from '@skyra/discord-components-react';
+import { profiles } from '@site/src/components/profiles';
+
+# Introduction
+
+Welcome to the documentation page for CRBTscript v11 (beta 1)!
+
+CRBTscript is a placeholder syntax used in the welcome & farewell messages. It allows anyone to embed values that might change thanks to a dynamic interpreter.
+
+To use it, simply insert any of these tags below – they will automatically be picked up by CRBT and be interpreted.
+
+## Syntax
+
+```
+<[tagName].[tagProperties]>
+```
+
+- `tagName`: The name of the tag (e.g. `user`, `server`).
+- `tagProperties`: The properties of the tag, separated by a dot (e.g. `name`, `id`).
+
+## Usage
+
+<Tabs groupId='io'>
+  <TabItem value='input' label='Input'>
+    <CodeBlock>Welcome &lt;user.name&gt; to **&lt;server.name&gt;**!</CodeBlock>
+  </TabItem>
+  <TabItem value='output' label='Output'>
+    <DiscordMessages>
+      <DiscordMessage {...profiles.crbt}>
+        Welcome Clembs to <b>CRBT Community</b>!
+      </DiscordMessage>
+    </DiscordMessages>
+  </TabItem>
+</Tabs>

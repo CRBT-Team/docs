@@ -1,0 +1,58 @@
+---
+title: <channel>
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
+import {
+  DiscordMessages,
+  DiscordMessage,
+} from '@skyra/discord-components-react';
+import DiscordComponents, {
+  DiscordMention,
+} from '@site/src/components/DiscordMention';
+import { profiles } from '@site/src/components/profiles';
+
+Allows you to get any of the information on a channel.
+
+## Context
+
+| Event            | Context                                                                              |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| Welcome message  | `channel` is assigned to the chosen Welcome channel.                                 |
+| Farewell message | `server` is assigned to the chosen Farewell channel.                                 |
+| Custom command   | `server` is assigned to the channel where the command was triggered. (not available) |
+
+## Syntax
+
+<Tabs groupId='io'>
+  <TabItem value='input' label='Input'>
+    <CodeBlock>
+      This message is being sent in &lt;channel.mention&gt;, and was created on
+      &lt;channel.created&gt;.
+    </CodeBlock>
+  </TabItem>
+  <TabItem value='output' label='Output'>
+    <DiscordMessages>
+      <DiscordMessage {...profiles.crbt}>
+        This message is being sent in{' '}
+        <DiscordMention type='channel'>general</DiscordMention>, and was created
+        on {new Date().toISOString()}.
+      </DiscordMessage>
+    </DiscordMessages>
+  </TabItem>
+</Tabs>
+
+## Properties
+
+| Property          | Description                                                          | Example                                                 |
+| ----------------- | -------------------------------------------------------------------- | ------------------------------------------------------- |
+| `name`            | Get the channel’s name                                               | general                                                 |
+| `id`              | Get the channel’s Discord ID                                         | 843141931504631818                                      |
+| `created`         | Get the channel’s creation date                                      | 2021-01-30T13:32:00Z                                    |
+| `mention`         | Mention the channel using its ID                                     | <DiscordMention type='channel'>general</DiscordMention> |
+| `topic`           | Get the channel’s topic, or `null` if none was set                   | `null`                                                  |
+| `isAgeRestricted` | Returns `true` if the channel is age restricted or `false` otherwise | `false`                                                 |

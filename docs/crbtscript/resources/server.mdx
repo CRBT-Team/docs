@@ -1,0 +1,63 @@
+---
+title: <server>
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Admonition from '@theme/Admonition';
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+} from '@skyra/discord-components-react';
+import DiscordComponents, {
+  DiscordMention,
+} from '@site/src/components/DiscordMention';
+import { profiles } from '@site/src/components/profiles';
+
+Allows you to get any of the information on a server.
+
+## Context
+
+| Event            | Context                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| Welcome message  | `server` is assigned to the server that the user joined.                            |
+| Farewell message | `server` is assigned to the server that the user left.                              |
+| Custom command   | `server` is assigned to the server where the command was triggered. (not available) |
+
+## Syntax
+
+<Tabs groupId='io'>
+  <TabItem value='input' label='Input'>
+    <CodeBlock>
+      **&lt;server.name&gt; - Members** <br />
+      We have **&lt;server.memberCount&gt;** members!
+    </CodeBlock>
+  </TabItem>
+  <TabItem value='output' label='Output'>
+    <DiscordMessages>
+      <DiscordMessage {...profiles.crbt}>
+        <DiscordCommand slot='reply' {...profiles.clembs} command='/members'></DiscordCommand>
+        <b>CRBT Community - Members</b>
+        <br />
+        We have 500 members!
+      </DiscordMessage>
+    </DiscordMessages>
+  </TabItem>
+</Tabs>
+
+## Properties
+
+| Property      | Description                                                   | Example                                                                                                      |
+| ------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `name`        | Get the server’s name                                         | CRBT Community                                                                                               |
+| `id`          | Get the server’s Discord ID                                   | 782584672298729473                                                                                           |
+| `icon`        | Get a link to the server’s icon, or `null` if none is set     | [Discord icon URL](https://cdn.discordapp.com/icons/782584672298729473/2fb82d49513208809dce02ae3e9c0999.png) |
+| `banner`      | Get a link to the server’s banner, or `null` if none is set   | null                                                                                                         |
+| `owner`       | Get the server’s owner ID                                     | 327690719085068289                                                                                           |
+| `created`     | Get the server’s creation date                                | 2020-11-29T13:32:00Z                                                                                         |
+| `roles`       | Get a list of the server’s role names                         | CRBT, Clembs, Developers, Testers…                                                                           |
+| `description` | Get the server’s description (only available for Communities) | Welcome to the Discord community for the CRBT bot!                                                           |
+| `members`     | Get the total amount of members in the server.                | 30                                                                                                           |

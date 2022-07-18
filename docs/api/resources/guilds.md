@@ -73,7 +73,7 @@ Get a guild's join channel and raw message. These are referred as "Welcome messa
 
 :::note
 
-[CRBTscript](/docs/crbtscript) is accepted in most of the fields, except for the ones marked with an asterisk.
+[CRBTscript](https://crbt.app/docs/crbtscript) is accepted in most of the fields, except for the ones marked with an asterisk.
 
 :::
 

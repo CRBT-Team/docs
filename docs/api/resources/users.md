@@ -28,7 +28,7 @@ Returns a [CRBT User object](#example-crbt-user-object) for a given user ID.
 
 \*\* If 'profile' is returned, the user syncs their accent color with their Discord Profile color.
 
-\*\*\* This variable can no longer be changed as of [CRBT v11.4](/announcements/rethinking-crbt-profiles-economy#the-background).
+\*\*\* This variable can no longer be changed as of [CRBT v11.4](https://crbt.app/announcements/rethinking-crbt-profiles-economy#the-background).
 
 ### Example CRBT User object
 

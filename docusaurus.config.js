@@ -9,8 +9,8 @@ const config = {
   title: 'CRBT Resources',
   url: links.base,
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'ignore',
   favicon: 'https://crbt.app/favicon.png',
 
   i18n: {

@@ -6,8 +6,8 @@ const { links } = require('./vars');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'CRBT Resources',
-  url: links.base,
+  title: 'CRBT',
+  url: links.blog,
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
@@ -42,7 +42,7 @@ const config = {
           postsPerPage: 1,
           showReadingTime: true,
           blogTitle: 'CRBT Blog',
-          blogSidebarTitle: 'Blog',
+          blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
         },
         theme: {
@@ -56,7 +56,7 @@ const config = {
     ({
       announcementBar: {
         content:
-          'Welcome to the new CRBT documentation & blog website! Explore the new changes and features in <a href="/announcements/new-resources-website">this blog article</a>.',
+          'Welcome to the new CRBT documentation & blog website! Explore the new changes and features in <a href="/new-resources-website">this blog article</a>.',
         isCloseable: false,
         textColor: '#fff',
         backgroundColor: 'var(--ifm-color-primary)',
@@ -146,7 +146,7 @@ const config = {
               },
               {
                 label: 'CRBTscript',
-                to: `${links.blog}`,
+                to: `/docs/crbtscript/intro`,
               },
             ],
           },
@@ -163,7 +163,7 @@ const config = {
               },
               {
                 label: 'API',
-                to: `${links.docs}/api`,
+                to: `${links.docs}/api/intro`,
               },
             ],
           },

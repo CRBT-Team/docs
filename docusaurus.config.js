@@ -6,8 +6,8 @@ const { links } = require('./vars');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'CRBT',
-  url: links.blog,
+  title: 'CRBT Docs',
+  url: links.base,
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
@@ -26,19 +26,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsed: false,
           sidebarCollapsible: false,
-          editUrl: 'https://github.com/CRBT-Team/resources.crbt.app/tree/main/',
+          editUrl: 'https://github.com/CRBT-Team/docs/tree/main/',
         },
         blog: {
-          routeBasePath: '/',
-          feedOptions: {
-            type: 'rss',
-            title: 'Blog - CRBT',
-            copyright: `© ${new Date().getFullYear()} CRBT Team`,
-            language: 'en-US',
-          },
+          routeBasePath: '/blog',
           postsPerPage: 1,
           showReadingTime: true,
           blogTitle: 'CRBT Blog',
@@ -54,20 +49,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      announcementBar: {
-        content:
-          'Welcome to the new CRBT documentation & blog website! Explore the new changes and features in <a href="/new-resources-website">this blog article</a>.',
-        isCloseable: false,
-        textColor: '#fff',
-        backgroundColor: 'var(--ifm-color-primary)',
-      },
       colorMode: {
         respectPrefersColorScheme: true,
         // disableSwitch: true,
       },
 
       navbar: {
-        title: 'CRBT',
+        title: 'CRBT Docs',
         logo: {
           alt: 'CRBT logo',
           src: 'https://crbt.app/assets/logos/CRBT-logo-black.svg',
@@ -75,40 +63,23 @@ const config = {
         },
         hideOnScroll: true,
         items: [
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'left',
-          //   dropdownItemsAfter: [
-          //     {
-          //       to: 'https://crowdin.com/project/crbt-docs',
-          //       label: 'Help us translate',
-          //     },
-          //   ],
-          // },
           {
-            type: 'dropdown',
             position: 'left',
-            label: 'Docs',
-            items: [
-              {
-                type: 'doc',
-                docId: 'crbtscript/intro',
-                label: 'CRBTscript',
-              },
-              {
-                type: 'doc',
-                docId: 'api/intro',
-                label: 'API',
-              },
-              {
-                to: 'https://purplet.js.org',
-                label: 'Purplet',
-              },
-            ],
+            label: 'CRBTscript',
+            to: 'crbtscript/intro',
           },
-          { to: '/', label: 'Blog', position: 'left' },
           {
-            to: 'https://github.com/CRBT-Team/resources.crbt.app',
+            position: 'left',
+            label: 'API',
+            to: 'api/intro',
+          },
+          {
+            position: 'left',
+            label: 'Purplet',
+            to: 'https://github.com/CRBT-Team/Purplet',
+          },
+          {
+            to: 'https://github.com/CRBT-Team/docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -116,89 +87,13 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            items: [
-              {
-                html: `
-                  
-                <a href="${links.base}">
-                <img src="${links.base}/assets/logos/CRBT-wordmark-white.png" alt="CRBT logo" />
-                </a>
-                `,
-              },
-              {
-                html: '<p>&copy; 2022 All rights reserved.<br />CRBT is not affiliated with Discord.</p>',
-                // to: 'https://crowdin.com/project/crbt-docs',
-              },
-            ],
-          },
-          {
-            title: 'Product',
-            items: [
-              {
-                label: 'Invite',
-                to: `${links.base}/invite`,
-              },
-              {
-                label: 'Changelog',
-                to: `${links.blog}/changelog`,
-              },
-              {
-                label: 'CRBTscript',
-                to: `/docs/crbtscript/intro`,
-              },
-            ],
-          },
-          {
-            title: 'Developers',
-            items: [
-              {
-                label: 'GitHub',
-                to: `${links.base}/github`,
-              },
-              {
-                label: 'Purplet',
-                to: `https://purplet.js.org`,
-              },
-              {
-                label: 'API',
-                to: `${links.docs}/api/intro`,
-              },
-            ],
-          },
-          {
-            title: 'Policies',
-            items: [
-              {
-                label: 'Credits',
-                to: `${links.base}/credits`,
-              },
-              {
-                label: 'Privacy',
-                to: `${links.base}/privacy`,
-              },
-            ],
-          },
-          {
-            title: 'Social',
-            items: [
-              {
-                label: 'Discord',
-                to: `${links.base}/discord`,
-              },
-              {
-                label: 'Twitter',
-                to: `${links.base}/twitter`,
-              },
-              {
-                label: 'Email',
-                to: `mailto:clembs@clembs.xyz`,
-              },
-            ],
-          },
-        ],
-        // copyright: `© ${new Date().getFullYear()} All rights reserved. CRBT is not affiliated with Discord.`,
+        logo: {
+          src: `${links.base}/assets/logos/CRBT-wordmark-white.png`,
+          alt: 'CRBT',
+          href: links.base,
+          width: '200px',
+        },
+        copyright: `© ${new Date().getFullYear()} All rights reserved. CRBT is not affiliated with Discord.`,
       },
       prism: {
         theme: lightCodeTheme,

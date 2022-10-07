@@ -19,11 +19,17 @@ Get a guild's accent color and other preferences.
 
 ### Guild Preferences structure
 
-| Parameter        | Type     | Description              |
-| ---------------- | -------- | ------------------------ |
-| `accentColor` \* | `string` | The guild's accent color |
+| Parameter     | Type     | Description                                              |
+| ------------- | -------- | -------------------------------------------------------- |
+| `accentColor` | `string` | The guild's accent color, as an hex code prefixed with # |
 
-\* Not implemented yet.
+### Example Guild Preferences object
+
+```json
+{
+  "accentColor": "#987fff"
+}
+```
 
 ## Get Guild Join Message
 

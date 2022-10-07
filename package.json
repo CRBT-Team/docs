@@ -1,6 +1,6 @@
 {
-  "name": "crbt-resources",
-  "version": "1.0.0",
+  "name": "docs",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

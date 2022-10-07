@@ -88,7 +88,7 @@ const config = {
       footer: {
         style: 'dark',
         logo: {
-          src: `${links.base}/assets/logos/CRBT-wordmark-white.png`,
+          src: `/wordmark-color.svg`,
           alt: 'CRBT',
           href: links.base,
           width: '200px',

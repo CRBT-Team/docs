@@ -15,20 +15,16 @@ Returns a [CRBT User object](#example-crbt-user-object) for a given user ID.
 
 ### CRBT User structure
 
-| Parameter                         | Type                    | Description                                 |
-| --------------------------------- | ----------------------- | ------------------------------------------- |
-| `id`                              | `string`                | The ID of the user                          |
-| `accentColor` \*\*                | `string` \| `'profile'` | The user's CRBT accent color                |
-| `birthday` \* \*\*\*              | `string?`               | The user's CRBT Profile birthday            |
-| `privacy` \*                      | `object?`               | The privacy settings of the user            |
-| `privacy.joinMessagesEnabled` \*  | `boolean?`              | Whether the user has enabled join messages  |
-| `privacy.leaveMessagesEnabled` \* | `boolean?`              | Whether the user has enabled leave messages |
+| Parameter                         | Type       | Description                                                                                                                                |
+| --------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                              | `string`   | The ID of the user                                                                                                                         |
+| `accentColor`                     | `string`   | The user's CRBT accent color as an hex color code, prefixed with #. Returns 'profile' if the users syncs with their Discord profile color. |
+| `birthday` \* (deprecated)        | `string?`  | Deprcated. The user's CRBT Profile birthday                                                                                                |
+| `privacy` \*                      | `object?`  | The privacy settings of the user                                                                                                           |
+| `privacy.joinMessagesEnabled` \*  | `boolean?` | Whether the user has enabled join messages                                                                                                 |
+| `privacy.leaveMessagesEnabled` \* | `boolean?` | Whether the user has enabled leave messages                                                                                                |
 
 \* Can only be accessed by the user themselves.
-
-\*\* If 'profile' is returned, the user syncs their accent color with their Discord Profile color.
-
-\*\*\* This variable can no longer be changed as of [CRBT v11.4](https://crbt.app/announcements/rethinking-crbt-profiles-economy#the-background).
 
 ### Example CRBT User object
 

@@ -11,23 +11,47 @@ To access these endpoints, you will need to use a token you registered with a Gu
 
 [Guilds Resource on Discord API Docs](https://discord.com/developers/docs/resources/guild)
 
-## Get Guild Preferences
+## Get Guild Settings
 
 `GET /guilds/{guild.id}`
 
-Get a guild's accent color and other preferences.
+Get a guild's settings.
 
-### Guild Preferences structure
+### Guild Settings structure
 
-| Parameter     | Type     | Description                                              |
-| ------------- | -------- | -------------------------------------------------------- |
-| `accentColor` | `string` | The guild's accent color, as an hex code prefixed with # |
+| Property            | Type         | Description                                                                                    |
+| ------------------- | ------------ | ---------------------------------------------------------------------------------------------- |
+| `id`                | `snowflake`  | The ID of the guild                                                                            |
+| `accentColor`       | `integer`    | The guild's accent color as an integer                                                         |
+| `flags`             | `integer`    | The guild's public flags                                                                       |
+| `automaticTheming`  | `boolean`    | true if the guild has Automatic Theming enabled                                                |
+| `iconHash`          | `string?`    | The lastly cached [image hash](https://discord.com/developers/docs/reference#image-formatting) |
+| `joinChannel`       | `snowflake?` | The channel ID where [Welcome Messages](#get-guild-join-message) are sent                      |
+| `leaveChannel`      | `snowflake?` | The channel ID where [Farewell Messages](#get-guild-leave-message) are sent                    |
+| `modLogsChannel`    | `snowflake?` | The channel ID where Moderation Notifications are sent                                         |
+| `modReportsChannel` | `snowflake?` | The channel ID where Moderation Reports are sent                                               |
+| `modules`           | `Modules`    | A modules object                                                                               |
 
-### Example Guild Preferences object
+### Example Guild Settings object
 
 ```json
 {
-  "accentColor": "#987fff"
+  "id": "738747595438030888",
+  "accentColor": 16743291,
+  "flags": 0,
+  "automaticTheming": true,
+  "iconHash": null,
+  "joinChannel": "843141931504631818",
+  "leaveChannel": "843141931504631818",
+  "modLogsChannel": "1070375756477255732",
+  "modReportsChannel": "1070375756477255732",
+  "modules": {
+    "economy": false,
+    "joinMessage": false,
+    "leaveMessage": false,
+    "moderationLogs": false,
+    "moderationReports": false
+  }
 }
 ```
 
@@ -39,7 +63,7 @@ Get a guild's join channel and raw message. These are referred as "Welcome messa
 
 ### Guild Join Message structure
 
-| Parameter             | Type                                                                           | Description                 |
+| Property              | Type                                                                           | Description                 |
 | --------------------- | ------------------------------------------------------------------------------ | --------------------------- |
 | `joinMessage`         | `Object?`                                                                      | The guild's join message    |
 | `joinMessage.content` | `string?`                                                                      | The message content         |

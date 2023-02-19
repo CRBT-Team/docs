@@ -15,27 +15,40 @@ Returns a [CRBT User object](#example-crbt-user-object) for a given user ID.
 
 ### CRBT User structure
 
-| Parameter                         | Type       | Description                                                                                                                                |
-| --------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `id`                              | `string`   | The ID of the user                                                                                                                         |
-| `accentColor`                     | `string`   | The user's CRBT accent color as an hex color code, prefixed with #. Returns 'profile' if the users syncs with their Discord profile color. |
-| `birthday` \* (deprecated)        | `string?`  | Deprcated. The user's CRBT Profile birthday                                                                                                |
-| `privacy` \*                      | `object?`  | The privacy settings of the user                                                                                                           |
-| `privacy.joinMessagesEnabled` \*  | `boolean?` | Whether the user has enabled join messages                                                                                                 |
-| `privacy.leaveMessagesEnabled` \* | `boolean?` | Whether the user has enabled leave messages                                                                                                |
+| Property          | Type                                   | Description                                                                                             |
+| ----------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `id`              | `snowflake`                            | The ID of the user                                                                                      |
+| `accentColor`     | `integer`                              | The user's CRBT accent color as an integer. If set to 0, CRBT syncs it with their Discord profile color |
+| `crbtBadges`      | [`CRBTBadge[]`](#crbt-badge-sturcture) | A user's CRBT badges, shown on User Info                                                                |
+| `telemetry` \*    | `boolean`                              | If the user has enabled Command Telemetry. [Learn more](https://crbt.app/policy)                        |
+| `silentJoins` \*  | `boolean`                              | Whether CRBT should announce when they join a server                                                    |
+| `silentLeaves` \* | `boolean`                              | Whether CRBT should announce when they leave a server                                                   |
 
-\* Can only be accessed by the user themselves.
+\* These properties can only be seen for a user requesting their own data.
 
 ### Example CRBT User object
 
 ```json
 {
   "id": "327690719085068289",
-  "accentColor": "#6543ff",
-  "birthday": "2006-07-05T10:00:00.000Z",
-  "privacy": {
-    "joinMessagesEnabled": true,
-    "leaveMessagesEnabled": true
-  }
+  "accentColor": 16743291,
+  "telemetry": true,
+  "silentJoins": false,
+  "silentLeaves": false,
+  "crbtBadges": [
+    {
+      "id": "developer",
+      "name": "CRBT Developer",
+      "contents": "🧑‍💻"
+    }
+  ]
 }
 ```
+
+### CRBT Badge sturcture
+
+| Property   | Type     | Description                                                                                  |
+| ---------- | -------- | -------------------------------------------------------------------------------------------- |
+| `id`       | `string` | The ID of the badge                                                                          |
+| `name`     | `string` | The full name of the badge                                                                   |
+| `contents` | `string` | The display emoji of the badge. Shows as a Unicode emoji or emoji mention for custom emojis. |

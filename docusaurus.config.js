@@ -75,6 +75,11 @@ const config = {
           },
           {
             position: 'left',
+            label: 'Self-hosting guide',
+            to: 'self-hosting/intro',
+          },
+          {
+            position: 'left',
             label: 'Purplet',
             to: 'https://github.com/CRBT-Team/Purplet',
           },

@@ -18,7 +18,7 @@ const config = {
     locales: ['en'],
   },
 
-  plugins: ['docusaurus-plugin-sass', '@docusaurus/plugin-pwa'],
+  plugins: ['docusaurus-plugin-sass'],
 
   presets: [
     [
@@ -52,6 +52,12 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true,
         // disableSwitch: true,
+      },
+      algolia: {
+        appId: 'GYE5Y1QLSS',
+        apiKey: '73fa46d998af9d9714d3b7d719a5e736',
+        indexName: 'crbt',
+        searchPagePath: 'search',
       },
 
       navbar: {

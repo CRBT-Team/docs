@@ -1,6 +1,5 @@
 {
   "label": "Resources",
-  "link": {
-    "type": "generated-index"
-  }
+  "link": null,
+  "collapsible": true
 }

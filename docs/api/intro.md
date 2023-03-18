@@ -1,18 +1,15 @@
 # Introduction
 
-**Base URL: `crbt.app/api`**
+Welcome to the CRBT API documentation! This place is where you'll find all of the different endpoints and resources related to the CRBT API.
 
-## Getting started
+This API allows anyone with a bit of coding knowledge to use CRBT's backend as a way to leverage apps utilizing features such as Economy, Moderation History, and more!
 
-1. Register a token [here](https://forms.gle/EEiGYzNK8AM9kqw28), make sure to include the Guild ID field to use the Guild endpoints.
-2. When using an endpoint, include the token in the Authorization header as such:
+This is perfect for making bots without having to host and build a dedicated database, or making front-end user interfaces for interacting with the features [CRBT](https://crbt.app) provide, without having to invite CRBT itself once!
 
-```ts
-await fetch(`${baseURL}/api/users/${userID}`, {
-  headers: {
-    Authorization: CRBT_TOKEN,
-  },
-});
-```
+## Bugs
 
-3. Some endpoints will work without the Authorization header, but their usage could be restricted.
+If you stumble across unexpected behavior in the API, or want to report incorrect documentation, please [open an issue](https://github.com/CRBT-Team/docs/issues).
+
+## Need help?
+
+If you need assistance on using the CRBT API, join our [Discord community](https://crbt.app/discord), where the team and other contributors can discuss and help you!

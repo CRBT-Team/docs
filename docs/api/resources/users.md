@@ -1,6 +1,5 @@
 ---
 title: User
-sidebar_position: 1
 ---
 
 # Users Resource

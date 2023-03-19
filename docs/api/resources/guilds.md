@@ -1,6 +1,5 @@
 ---
 title: Guild
-sidebar_position: 2
 ---
 
 import HTTP, { HTTPMethodBadge } from '@site/src/components/HTTPMethodBadge';
@@ -9,7 +8,9 @@ import HTTP, { HTTPMethodBadge } from '@site/src/components/HTTPMethodBadge';
 
 Guilds are referred to as "Servers" in the Discord app.
 
+:::info
 To access these endpoints, you will need to use a token you registered with a Guild ID field.
+:::
 
 [Guilds Resource on Discord API Docs](https://discord.com/developers/docs/resources/guild)
 
@@ -85,7 +86,7 @@ Returns a [Guild Join/Leave Message object](#guild-joinleave-message-object) for
 | 1 << 1 | HasLeveling  | Whether the guild can access to Leveling   |
 | 1 << 3 | HasChatMoney | Whether the guild can access to Chat Money |
 
-### Example Guild
+#### Example Guild
 
 ```json
 {
@@ -119,7 +120,7 @@ Returns a [Guild Join/Leave Message object](#guild-joinleave-message-object) for
 | `embed`   | [`Embed?`](https://discord.com/developers/docs/resources/channel#embed-object) | The message embed.                                                         |
 | `script`  | `string?`                                                                      | The message script. Should contain [CRBTscript](/crbtscript/intro) syntax. |
 
-### Example Guild Join/Leave Message
+#### Example Guild Join/Leave Message
 
 ```json
 {

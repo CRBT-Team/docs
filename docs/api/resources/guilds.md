@@ -61,6 +61,14 @@ Returns a [Guild Join/Leave Message object](#guild-joinleave-message-object) for
 
 Returns a [Guild Join/Leave Message object](#guild-joinleave-message-object) for the given ID. Referred to as "Farewell Message" within the app.
 
+## Get Guild Polls
+
+<HTTPMethodBadge type="GET">
+  /guilds/{`{guild.id}`}/polls
+</HTTPMethodBadge>
+
+Returns an array of [Poll objects](./polls#poll-object) for this guild.
+
 ## Guild Object
 
 ### Guild Structure

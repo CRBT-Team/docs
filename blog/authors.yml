@@ -1,30 +1,30 @@
 Clembs:
   name: Clément
   title: Founder
-  url: https://clembs.xyz
-  image_url: https://crbt.app/assets/logos/clembs.png
+  url: https://clembs.com
+  image_url: https://crbt.app/assets/avatars/clembs.png
 
 Dave:
   name: Dave Caruso
   title: Purplet co-founder
-  url: https://davecode.net
-  image_url: https://cdn.discordapp.com/attachments/722451535962964061/904469129602416740/Icon_-_Base_-_1024.png
+  url: https://paperdave.net
+  image_url: https://crbt.app/assets/avatars/dave.png
 
 User5522:
   name: User5522
   title: Blog writer
   url: https://user5522.github.io
-  image_url: https://cdn.discordapp.com/attachments/813511433764995142/933742076598812694/Artboard_1.png
+  image_url: https://crbt.app/assets/avatars/user5522.png
 
 bkly:
   name: bkly
   title: Blog writer & Localization
   url: https://youtube.com/bklydesign
-  image_url: https://cdn.discordapp.com/attachments/945417344656752712/967499332704157736/unknown.png
+  image_url: https://crbt.app/assets/avatars/bkly.png
 
 CRBT:
   name: CRBT
-  image_url: https://crbt.app/assets/logos/crbt.png
+  image_url: https://crbt.app/assets/logos/CRBT.png
 
 Dev:
   name: CRBT Dev
@@ -34,4 +34,4 @@ Trubiso:
   name: Trubiso
   title: CRBTscript developer
   url: https://trubiso.tk
-  image_url: https://cdn.discordapp.com/emojis/717683480787550228.png
+  image_url: https://crbt.app/assets/avatars/trubiso.png

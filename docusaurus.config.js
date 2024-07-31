@@ -1,47 +1,47 @@
 // @ts-check
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const { links } = require('./vars');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const { links } = require("./vars");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'CRBT Docs',
+  title: "CRBT Docs",
   url: links.base,
-  baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'ignore',
-  favicon: 'https://crbt.app/favicon.png',
+  baseUrl: "/",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "ignore",
+  favicon: "https://crbt.app/favicon.png",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: ["docusaurus-plugin-sass"],
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
           sidebarCollapsed: false,
           sidebarCollapsible: false,
-          editUrl: 'https://github.com/CRBT-Team/docs/tree/main/',
+          editUrl: "https://github.com/CRBT-Team/docs/tree/main/",
         },
         blog: {
-          routeBasePath: '/blog',
+          routeBasePath: "/blog",
           postsPerPage: 1,
           showReadingTime: true,
-          blogTitle: 'CRBT Blog',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogTitle: "CRBT Blog",
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
     ],
@@ -54,55 +54,60 @@ const config = {
         // disableSwitch: true,
       },
       algolia: {
-        appId: 'GYE5Y1QLSS',
-        apiKey: '73fa46d998af9d9714d3b7d719a5e736',
-        indexName: 'crbt',
-        searchPagePath: 'search',
+        appId: "GYE5Y1QLSS",
+        apiKey: "73fa46d998af9d9714d3b7d719a5e736",
+        indexName: "crbt",
+        searchPagePath: "search",
       },
 
       navbar: {
-        title: 'CRBT Docs',
+        title: "CRBT Docs",
         logo: {
-          alt: 'CRBT logo',
-          src: 'https://crbt.app/assets/logos/CRBT-logo-black.svg',
-          srcDark: 'https://crbt.app/assets/logos/CRBT-logo-white.svg',
+          alt: "CRBT logo",
+          src: "https://crbt.app/assets/logos/CRBT-logo-black.svg",
+          srcDark: "https://crbt.app/assets/logos/CRBT-logo-white.svg",
         },
         hideOnScroll: true,
         items: [
           {
-            position: 'left',
-            label: 'CRBTscript',
-            to: 'crbtscript/intro',
+            position: "left",
+            label: "CRBTscript",
+            to: "crbtscript/intro",
           },
           {
-            position: 'left',
-            label: 'API',
-            to: 'api/intro',
+            position: "left",
+            label: "Blog",
+            to: "blog",
+          },
+          // {
+          //   position: 'left',
+          //   label: 'API',
+          //   to: 'api/intro',
+          // },
+          {
+            position: "left",
+            label: "Self-hosting guide",
+            to: "self-hosting/intro",
           },
           {
-            position: 'left',
-            label: 'Self-hosting guide',
-            to: 'self-hosting/intro',
+            position: "left",
+            label: "Purplet",
+            to: "https://github.com/CRBT-Team/Purplet",
           },
           {
-            position: 'left',
-            label: 'Purplet',
-            to: 'https://github.com/CRBT-Team/Purplet',
-          },
-          {
-            to: 'https://github.com/CRBT-Team/docs',
-            label: 'GitHub',
-            position: 'right',
+            to: "https://github.com/CRBT-Team/docs",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         logo: {
           src: `/wordmark-color.svg`,
-          alt: 'CRBT',
+          alt: "CRBT",
           href: links.base,
-          width: '200px',
+          width: "200px",
         },
         copyright: `© ${new Date().getFullYear()} All rights reserved. CRBT is not affiliated with Discord.`,
       },

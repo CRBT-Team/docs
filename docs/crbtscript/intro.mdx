@@ -1,20 +1,20 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-import Admonition from '@theme/Admonition';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
 import {
   DiscordMessages,
   DiscordMessage,
-} from '@skyra/discord-components-react';
-import { profiles } from '@site/src/components/profiles';
+} from "@skyra/discord-components-react";
+import { profiles } from "@site/src/components/profiles";
 
 # Introduction
 
-Welcome to the documentation page for CRBTscript v11 (beta 1)!
+Welcome to the documentation page for CRBTscript v11!
 
-CRBTscript is a placeholder syntax used in the welcome & farewell messages. It allows anyone to embed values that might change thanks to a dynamic interpreter.
+CRBTscript is a placeholder syntax used in the Welcome & Farewell messages. It allows anyone to embed values that might change thanks to a dynamic interpreter.
 
-To use it, simply insert any of these tags below – they will automatically be picked up by CRBT and be interpreted.
+To use it, simply insert any of these tags below - they will automatically be picked up by CRBT and be interpreted.
 
 ## Syntax
 
@@ -27,11 +27,11 @@ To use it, simply insert any of these tags below – they will automatically be 
 
 ## Usage
 
-<Tabs groupId='io'>
-  <TabItem value='input' label='Input'>
+<Tabs groupId="io">
+  <TabItem value="input" label="Input">
     <CodeBlock>Welcome &lt;user.name&gt; to **&lt;server.name&gt;**!</CodeBlock>
   </TabItem>
-  <TabItem value='output' label='Output'>
+  <TabItem value="output" label="Output">
     <DiscordMessages>
       <DiscordMessage {...profiles.crbt}>
         Welcome Clembs to <b>CRBT Community</b>!

@@ -1,0 +1,153 @@
+---
+title: What's new - Summer 2024 update
+description: Server Economy is finally available, /poll uses native Discord polls, and more!
+authors: Clembs
+date: 2024-08-01 00:00:01
+---
+
+It has been exactly 2 years since the last changelog, and a lot has happened since then (most of it as simple Discord or Twitter announcements).
+
+This update is a big one and introduces Server Economy, [two years after I announced it](/blog/rethinking-crbt-profiles-economy#per-server-economy)... So let's get into it!
+
+## Server Economy is here!
+
+Server Economy is a new feature that allows users to engage more with your server by grinding money, buying items, and more. The entire system is entirely customizable, from the currency to the Shop, and everything was made very intuitive to use.
+
+It is currently being rolled out to a few servers only to ensure the feature goes as smooth as possible, and I expect all servers to have access to it by the end of August as I iron out bugs and complete a bit of the [roadmap](#roadmap).
+
+Don't have access to Economy and want to try it out? [Join the CRBT Community](https://crbt.app/discord) and ask me with your server ID (found with `/server info`)!
+
+:::caution Economy is still under development!
+While Server Economy should be stable, some features are still missing (see [roadmap](#roadmap)).
+
+Please report any bugs you find using `/report`.
+:::
+
+### Set up Economy
+
+1. Open `/server settings`
+2. Choose `Economy` from the feature drop down
+3. Hit the `Edit Currency` button to choose a custom name and emoji to represent your server's currency
+4. Go to the `Shop` tab to create categories and items for your members to buy
+5. Go back to `Overview` and click `Enable feature` once you're ready!
+6. Commands will be enabled. You can edit the Shop and currency later on.
+
+<video
+  width="100%"
+  height="auto"
+  controls
+  src="https://c.clembs.com/files/010245fea8da630ead.mp4"
+/>
+
+_Demo video on how to set up Economy. Some loading times were shortened._
+
+### Garner money
+
+When Economy is enabled, members can get some of the server's money using 2 commands:
+
+- `/work`: A command you can use every 5 minutes. You get XP which makes you get more money, and the longer you wait between uses, the more money you get also.
+- `/daily`: A command to earn some money each day. With each use every day, you augment your streak to get a 7-day streak bonus.
+
+### Shop
+
+When you've set up at least one category with one item, the `/shop` command appears and lets your members use their money to purchase any items using the on-screen menus.
+
+When setting up your Shop, an item can have the following properties:
+
+- A name and an emoji
+- A description to describe the use of your item
+- A type (only role items and cosmetic items (with no value) are supported for now)
+- A value, being a role to give when equipped in the case of a role item
+- A limit to its stock (optional)
+- A limit in time after which members can no longer buy your item (optional)
+
+Your members can buy one of each item for now (this will be a setting later on), and if it's a consumable (e.g. a role), they can (un)equip it at will.
+
+You can have up to 10 categories and 25 items across those categories (that's 250 items total, phew!!)
+
+### Manage money and items
+
+Members can also use the following commands to view or give their money:
+
+- `/balance`: View your balance, or any user's balance
+- `/leaderboard`: See the top members with the most money
+- `/give`: Give money to another member
+- `/inventory`: View all of your items and (un)equip them.
+
+### CRBTscript placeholders
+
+You will be able to set these placeholders for fields where CRBTscript is supported (e.g. Welcome & Farewell messages):
+
+- `<server.color>`: Server's accent color
+- `<server.currency.singular>` Server's currency name (singular form)
+- `<server.currency.plural>` Server's currency name (plural form)
+- `<server.currency.symbol>` Server's currency symbol (emoji)
+- `<server.items.count>` The number of items total in the server's Shop
+- `<server.categories.count>` The number of categories in the server's Shop
+
+- `<user.money>` The amount of money a user has on the current server
+- `<user.work.exp>` The amount of Experience Points earned from /work
+- `<user.items.count>` The number of items in the current user's inventory
+
+### Roadmap
+
+Economy isn't done here though, this is more or less the fundamentals. Here's a list of planned features, that will roll out progressively.
+
+- Other item types (Income multiplier, CRBTscript action triggers, webhook action triggers, profile banners, etc.)
+- Editing rewards for `/daily` and `/work`
+- Localization into other languages
+- `/give_item` command to exchange items between users
+- Transaction logs: Send all transaction updates in a channel
+- Discounts: Temporarily reduce the price of specific items
+- Refunds: Return an item and get your money back
+- Multiple quantity: Buy multiple of one item
+- One-time items: Items that disappear from a user's inventory when consumed
+- Marketplace: Resell items for a chosen price, even archived ones, to other players
+- Robbing: Steal money from other players, with a risk of losing a lot!
+- More Shop customization: Add a banner image, change the name of the Shop, etc.
+- A way for admins to add money or items to users
+- Give money away using `/giveaway`.
+- **Importing from MEE6, Unbelievaboat, Tatsu**
+
+## `/poll` now uses Discord polls
+
+As Discord released their own Polls feature a few months ago, CRBT's Polls feature have been removed. The `/poll` command remains, but was slightly altered to now send a Discord Poll instead of a CRBT embed. Here's what changes for you:
+
+- Polls can now be set to Multiple answers
+- Poll titles and questions are longer
+- You can create a poll with only one answer (previously 2)
+- Votes are public to everyone (previously, they were only visible to mods & the poll creator)
+- You can set up to 10 answers (previously 4)
+- Polls look more native and are less laggy
+- They can last up to 7 days (previously 1 month for CRBT polls)
+- You can't use custom emoji from other servers
+- Since CRBT is now the creator of the poll, you won't be able to stop, delete or edit a running poll (Users with the "Manage Messages" permission can always delete a message with a poll attached)
+
+## Minor upgrades
+
+- CRBT now uses Discord's new icons
+- Running Discord events will be suggested when creating a reminder using `/reminder new`
+- You can select what data to delete in the Privacy menu on `/server settings`
+
+## Fixes
+
+- The `Get JSON` message context menu command now gives the raw API message instead of a Discord.js object
+- Reminders (`/reminder new`), giveaways (`/giveaway`) and temporary bans (`/ban`) now work as expected
+- `/timeout` now works as expected
+- Moderation notifications will only be sent to the server owners who's had the permission enabled
+- `/convert` using currencies now works as expected
+- The "Jump to First/Last page" buttons in `/search` now works as expected
+- `/search` autocomplete now only shows 3 suggestions from DuckDuckGo, adding visibility to other search engines
+- Fixes related to the "Import" and "Export" features in the Welcome & Farewell message editor
+- `/clear` can no longer up to 100 messages but rather 99. Choosing 100 messages would previously display an error
+- The Welcome & Farewell `/server settings` page has been updated to have clearer warning messages, which correspond to either message type
+
+## Technical changes
+
+These changes relate to the internal CRBT organisation and repository, so they won't affect you directly.
+
+- The historic `dev` branch of the main [CRBT repository](https://crbt.app/github/CRBT) has been fully merged into `main`, meaning that new features will each be developed in their own branch and merged into `main` when ready.
+- The release schedule for new CRBT releases has been set, and will work as so:
+  - Major update in Summer (July/August), will contain at least one new feature (e.g. Server Economy this update)
+  - Minor updates quarterly (October, January, April), will minor improvements or minor feature releases (e.g. Moderation Rules coming in September)
+  - Bug fixes when needed, will be released as soon as possible

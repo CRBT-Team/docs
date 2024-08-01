@@ -3,20 +3,20 @@ title: <user>
 sidebar_position: 1
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-import Admonition from '@theme/Admonition';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import Admonition from "@theme/Admonition";
 import {
   DiscordMessages,
   DiscordMessage,
-} from '@skyra/discord-components-react';
+} from "@skyra/discord-components-react";
 import DiscordComponents, {
   DiscordMention,
-} from '@site/src/components/DiscordMention';
-import { profiles } from '@site/src/components/profiles';
+} from "@site/src/components/DiscordMention";
+import { profiles } from "@site/src/components/profiles";
 
-Allows you to get any of a user’s Discord account information.
+Allows you to get any of a user's Discord account information.
 
 ## Context
 
@@ -28,14 +28,14 @@ Allows you to get any of a user’s Discord account information.
 
 ## Syntax
 
-<Tabs groupId='io'>
-  <TabItem value='input' label='Input'>
+<Tabs groupId="io">
+  <TabItem value="input" label="Input">
     <CodeBlock>
       &lt;user.mention&gt; left the server... They were a member since
       &lt;user.joined&gt;.
     </CodeBlock>
   </TabItem>
-  <TabItem value='output' label='Output'>
+  <TabItem value="output" label="Output">
     <DiscordMessages>
       <DiscordMessage {...profiles.crbt}>
         <DiscordMention>Clembs</DiscordMention> left the server. They were a
@@ -47,17 +47,20 @@ Allows you to get any of a user’s Discord account information.
 
 ## Properties
 
-| Property   | Description                                                             | Example                                                                                                          |
-| ---------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `name`     | Get the username                                                        | Clembs                                                                                                           |
-| `discrim`  | Get the four-digit discriminator                                        | 3548                                                                                                             |
-| `tag`      | Get the Discord tag                                                     | Clembs#3548                                                                                                      |
-| `id`       | Get the Discord user ID                                                 | 327690719085068289                                                                                               |
-| `avatar`   | Get a link to the user’s avatar                                         | [Discord avatar URL](https://cdn.discordapp.com/avatars/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
-| `banner`   | Get a link to the user’s banner, or “null” if the user doesn’t have any | [Discord banner URL](https://cdn.discordapp.com/banners/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
-| `nickname` | Get the user’s server nickname, or its username if none was set         | Clembs                                                                                                           |
-| `created`  | Get the date when the user created their account                        | 2017-06-23T08:05:00Z                                                                                             |
-| `joined`   | Get the date when the user joined the current server                    | 2021-05-06T09:10:00Z                                                                                             |
-| `mention`  | Mention the user using their ID                                         | <DiscordMention>Clembs</DiscordMention>                                                                          |
-| `isBot`    | Returns `true` if the user is a bot, and `false` otherwise              | `false`                                                                                                          |
-| `roles`    | Get the names of the user’s roles                                       | Developer, Designer, Streamer                                                                                    |
+| Placeholder          | Description                                                                       | Example                                                                                                          |
+| -------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `<user.name>`        | Get the username's unique username                                                | clembs                                                                                                           |
+| `<user.discrim>`     | Get the four-digit discriminator (deprecated, shows '0' if the user is not a bot) | 0                                                                                                                |
+| `<user.tag>`         | Get the Discord's formatted username (with the discriminator, if any)             | clembs                                                                                                           |
+| `<user.id>`          | Get the Discord user ID                                                           | 327690719085068289                                                                                               |
+| `<user.avatar>`      | Get a link to the user's avatar                                                   | [Discord avatar URL](https://cdn.discordapp.com/avatars/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
+| `<user.banner>`      | Get a link to the user's banner, or “null” if the user doesn't have any           | [Discord banner URL](https://cdn.discordapp.com/banners/327690719085068289/4eeda0b75a6f56df96545c7b8d65c2c6.png) |
+| `<user.nickname>`    | Get the user's server nickname, or its username if none was set                   | Clembs                                                                                                           |
+| `<user.created>`     | Get the date when the user created their account                                  | 2017-06-23T08:05:00Z                                                                                             |
+| `<user.joined>`      | Get the date when the user joined the current server                              | 2021-05-06T09:10:00Z                                                                                             |
+| `<user.mention>`     | Mention the user using their ID                                                   | <DiscordMention>Clembs</DiscordMention>                                                                          |
+| `<user.isBot>`       | Returns `true` if the user is a bot, and `false` otherwise                        | `false`                                                                                                          |
+| `<user.roles>`       | Get the names of the user's roles                                                 | Developer, Designer, Streamer                                                                                    |
+| `<user.money>`       | Get the user's money on the current server                                        | 1000                                                                                                             |
+| `<user.work.exp>`    | Get the user's Experience Points earned from `/work` for the current server       | 3450                                                                                                             |
+| `<user.items.count>` | Get the number of items the user has in their inventory                           | 5                                                                                                                |

@@ -84,16 +84,16 @@ const config = {
           //   label: 'API',
           //   to: 'api/intro',
           // },
-          {
-            position: "left",
-            label: "Self-hosting guide",
-            to: "self-hosting/intro",
-          },
-          {
-            position: "left",
-            label: "Purplet",
-            to: "https://github.com/CRBT-Team/Purplet",
-          },
+          // {
+          //   position: "left",
+          //   label: "Self-hosting guide",
+          //   to: "self-hosting/intro",
+          // },
+          // {
+          //   position: "left",
+          //   label: "Purplet",
+          //   to: "https://github.com/CRBT-Team/Purplet",
+          // },
           {
             to: "https://github.com/CRBT-Team/docs",
             label: "GitHub",
